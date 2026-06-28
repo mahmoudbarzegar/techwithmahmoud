@@ -16,8 +16,8 @@ class FileStorage:
 
 # ✅ Works with cloud
 class CloudStorage:
-    # def save(self, data: Any): 
-    #     print(f"Saved to cloud: {data}")
+    def save(self, data: Any): 
+        print(f"Saved to cloud: {data}")
 
     def nothing_method(self):
         print("Nothing to show")

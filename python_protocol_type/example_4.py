@@ -11,8 +11,9 @@ class Database:
 
 # ✅ Works with file
 class FileStorage:
-    # def save(self, data:str): 
-    #     print(f"Saved to file: {data}")
+    def save(self, data:str): 
+        print(f"Saved to file: {data}")
+
     def read_from_file_storage(self,data:str):
         print(f"Read data from: {data}")
 
