@@ -1,0 +1,10 @@
+[project]
+name = "techwithmahmoud"
+version = "0.1.0"
+description = "@techwithmahmoud code examples."
+requires-python = ">=3.13"
+dependencies = [
+    "pre-commit==4.6.0",
+    "pytest==9.0.3",
+    "ruff==0.15.15",
+]
