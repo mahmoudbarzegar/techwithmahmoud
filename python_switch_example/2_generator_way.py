@@ -1,7 +1,7 @@
 from typing import Generator
 
-
 switches = ["A", "B", "C"]
+
 
 def generate_states(n: int) -> Generator[list[int], None, None]:
     if n == 0:
@@ -13,4 +13,4 @@ def generate_states(n: int) -> Generator[list[int], None, None]:
 
 
 for state in generate_states(len(switches)):
-    print(dict(zip(switches,state)))
+    print(dict(zip(switches, state)))
