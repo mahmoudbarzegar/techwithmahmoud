@@ -3,12 +3,14 @@
 # (handles functions that take arguments)
 # ─────────────────────────────────────────────
 
+
 def logger(func):
-    def wrapper(*args, **kwargs):          # accept any arguments
+    def wrapper(*args, **kwargs):  # accept any arguments
         print(f"▶ Calling: {func.__name__} with args={args}")
-        result = func(*args, **kwargs)     # pass them to original function
+        result = func(*args, **kwargs)  # pass them to original function
         print(f"✔ Result: {result}")
         # return result
+
     return wrapper
 
 
@@ -16,19 +18,23 @@ def validate_input(repeat: int):
     def wrapper(func):
         def check(a, b):
             for i in range(repeat):
-                print(f"▶ Calling: {func.__name__} with args={a,b}")
-                if b <= 0 :
+                print(f"▶ Calling: {func.__name__} with args={a, b}")
+                if b <= 0:
                     print(f"b with this value {b} can not acceptable.")
                 else:
-                    print(f"The result is: {func(a,b)}")
-                a *=2
-                b *=2 
+                    print(f"The result is: {func(a, b)}")
+                a *= 2
+                b *= 2
+
         return check
+
     return wrapper
+
 
 @validate_input(3)
 def add(a, b):
     return a + b
+
 
 @logger
 def multiply(a, b):

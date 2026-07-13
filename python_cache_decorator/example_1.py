@@ -1,10 +1,10 @@
-
 # ─────────────────────────────────────────────
 # Example 1: The problem – without caching
 # Same calculation runs every time, even with same input
 # ─────────────────────────────────────────────
 
 import time
+
 
 def fibonacci(n):
     """Calculate nth Fibonacci number – no caching."""
@@ -14,7 +14,7 @@ def fibonacci(n):
 
 
 start = time.time()
-print(fibonacci(35))        # 9227465
+print(fibonacci(35))  # 9227465
 print(f"⏱ Time: {time.time() - start:.4f}s")
 
 # Output:

@@ -1,4 +1,3 @@
-
 # ─────────────────────────────────────────────
 # Example 3: Build your own @cache from scratch
 # So you understand exactly what lru_cache does internally
@@ -6,25 +5,26 @@
 import time
 from functools import wraps
 
+
 def cache(func):
-    """
-    Stores results of previous calls in a dictionary.
+    """Stores results of previous calls in a dictionary.
+
     If the same arguments are passed again → return stored result instantly.
     """
-    stored_results = {}     # { arguments : result }
+    stored_results = {}  # { arguments : result }
 
     @wraps(func)
     def wrapper(*args):
         if args in stored_results:
             print(f"   [cache hit]  {func.__name__}{args}")
-            return stored_results[args]     # return instantly, no recalculation
+            return stored_results[args]  # return instantly, no recalculation
 
         print(f"   [cache miss] {func.__name__}{args} → calculating...")
-        result = func(*args)                # calculate for the first time
-        stored_results[args] = result       # save for next time
+        result = func(*args)  # calculate for the first time
+        stored_results[args] = result  # save for next time
         return result
 
-    wrapper.cache_info = stored_results     # type: ignore # expose cache for inspection
+    wrapper.cache_info = stored_results  # type: ignore # expose cache for inspection
     return wrapper
 
 
