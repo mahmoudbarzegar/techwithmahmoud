@@ -1,4 +1,4 @@
-from typing import Generator
+from collections.abc import Generator
 
 switches = ["A", "B", "C"]
 
@@ -13,4 +13,4 @@ def generate_states(n: int) -> Generator[list[int], None, None]:
 
 
 for state in generate_states(len(switches)):
-    print(dict(zip(switches, state)))
+    print(dict(zip(switches, state, strict=True)))
