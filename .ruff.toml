@@ -3,11 +3,8 @@ target-version = "py313"
 fix = true
 
 exclude = [
-    "**/migrations/**",
-    "**/proto_generated/**",
     ".venv",
-    "__pycache__",
-    "myapp/grpc_server.py"
+    "__pycache__"
 ]
 
 [lint]
@@ -19,6 +16,9 @@ select = [
     "D",   # pydocstyle (docstring rules)
     "N",   # pep8-naming (naming conventions)
     "DJ",  # flake8-django rules
+    "B",   # flake8-bugbear rules
+    "UP",  # flake8-unused-arguments rules
+    "S",   # flake8-bandit rules
 ]
 
 ignore = [
