@@ -17,7 +17,7 @@ def logger(func):
 def validate_input(repeat: int):
     def wrapper(func):
         def check(a, b):
-            for i in range(repeat):
+            for _i in range(repeat):
                 print(f"▶ Calling: {func.__name__} with args={a, b}")
                 if b <= 0:
                     print(f"b with this value {b} can not acceptable.")
