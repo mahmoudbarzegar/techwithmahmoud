@@ -28,6 +28,9 @@ def cache(func):
     return wrapper
 
 
+##cache(fibonacci(n))
+
+
 @cache
 def fibonacci(n):
     if n <= 1:
